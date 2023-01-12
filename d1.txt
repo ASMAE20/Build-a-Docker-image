@@ -1,0 +1,82 @@
+docker --version
+docker
+docker system info
+docker image
+docker image ls
+docker container
+docker container ls
+docker pull hello-world
+docker run hello-world
+docker run -it --rm ubuntu bach
+docker ps -a
+docker rm e7682
+docker system prune
+
+creer notre propre countainer
+creer dossier
+npm init -y 
+npm i express 
+touch app.js(i find a probleme here that i must set this command in windows powersheel as administrator
+set-executionpolicy unrestricted
+)
+on met le code expresse dans app.js
+
+craeta a file named Dockerfile
+create .dockerignore to not delplecat node-modules
+then we execute   docker build . -t linstancode/test-app
+docker run --name asmae -p 3000:8080 -d linstancode/test-app
+-d pour ne pas blocker le terminal
+docker start asmae to rerun a countaire
+
+
+
+
+What is a docker volume?
+A Docker volume is an independent file system entirely managed by Docker and exists as a normal file or directory on the host, where data is persisted
+The purpose of using Docker volumes is to persist data outside the container so it can be backed up or shared.
+Navigate to http://localhost:8080/ and you should see “Hello from Host”.
+This is called a bind mount and is commonly used by developers. But, if you are using Docker Desktop on Windows or MacOS bind, mounts have significant performance issues. As a result, using volumes may be the best alternative for holding state between container runs.
+Unlike bind mount, where you can mount any directory from your host, volumes are stored in a single location (most likely /var/lib/docker/volumes/ on unix systems) and greatly facilitates managing data (backup, restore, and migration). Docker volumes can safely be shared between several running containers
+
+docker volume
+docker volume create data
+docker volume ls
+docker volume inspecte data
+
+
+
+
+the docker-compose command to easily share data between multiple containers.
+docker-compose up 
+
+docker system prune -a to delete all images countainer volume
+
+
+App  3
+
+docker build . -t app3:nodemon
+docker run --name app3_c1_nodemon -p 2000:4000 app3:nodemon
+docker stop app3_c1_nodemon
+docker run --name app3_c1_nodemon -p 2000:4000 -v C:\Users\HP\Desktop\app3:/app -v /app/node_modules  app3:nodemon
+  
+
+
+Docker-compose 
+
+create the app3 folder
+then we add a new file docker-compose.yaml 
+then docker-compose up
+
+
+
+docker hup 
+
+docker login
+asmaeel
+asmae123456
+docker push asmaeel/myapp3:myapp3
+
+
+docker image rm asmaeel/myapp3:myapp3
+dock
+er pull asmaeel/myapp3:myapp3
